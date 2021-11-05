@@ -22,7 +22,7 @@ with open(compiled_contract_path) as f:
 
 contract = w3.eth.contract(address=deployed_contract_address, abi=contract_abi)
 
-# result = contract.functions.store(1993).transact()
-# print(result.hex())
+result = contract.functions.store(1993).transact()
+print(result.hex())
 message = contract.functions.retrieve().call()
 print(message)
