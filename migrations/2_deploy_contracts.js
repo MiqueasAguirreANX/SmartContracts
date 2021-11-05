@@ -1,4 +1,5 @@
-const TestContract = artifacts.require('./TextContract.sol');
-module.exports = function(deployer) {
-    deployer.deploy(TestContract);
+const TestContract = artifacts.require('TestContract');
+
+module.exports = async function(deployer, networks, accounts) {
+    await deployer.deploy(TestContract);
 }
