@@ -1,7 +1,13 @@
 import json
 from web3 import Web3
+from config import Environment
 
-blockchain_address = 'http://127.0.0.1:7545'
+try:
+    env = Environment()
+except:
+    raise Exception("Dont have configured the project")
+
+blockchain_address = 'http://127.0.0.1:7545' # ganache network
 w3 = Web3(Web3.HTTPProvider(blockchain_address))
 
 w3.eth.defaultAccount = w3.eth.accounts[0]
